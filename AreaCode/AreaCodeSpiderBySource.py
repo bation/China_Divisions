@@ -4,7 +4,7 @@ import os
 from bs4 import BeautifulSoup
 
 HOME_PATH = os.path.expandvars('$HOME')
-DIR_NAME = os.path.join(HOME_PATH, '中华人民共和国县级及以上行政区划代码')
+DIR_NAME = os.path.join(HOME_PATH, '中华人民共和国县级及以上行政区划代码(code-divisions)')
 
 
 def get_area_code_dict(soup, year):
@@ -33,7 +33,7 @@ def get_area_code_dict(soup, year):
                     city = str(s)
         print(city + '-' + code)
         print(year)
-        code_dict[city] = code
+        code_dict[code] = city
         code = ''
         city = ''
     # print(code_dict)
